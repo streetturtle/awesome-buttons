@@ -68,7 +68,7 @@ end
 buttons.with_text = function(args)
     local type = args.type or 'basic'
     local text = args.text
-    local onclick = args.onclick or function(c) naughty.notify{text = 'Button pressed!'} end
+    local onclick = args.onclick or function() end
     local color = args.color or '#D8DEE9'
     local text_size = args.text_size or 10
 
@@ -126,7 +126,7 @@ buttons.with_icon_and_text = function(args)
     local type = args.type or 'basic'
     local text = args.text
     local icon = args.icon
-    local onclick = args.onclick or function(c) naughty.notify{text = 'Button pressed!'} end
+    local onclick = args.onclick or function() end
     local color = args.color or '#D8DEE9'
     local text_size = args.text_size or 10
     local shape = args.shape or 'rounded_rect'
