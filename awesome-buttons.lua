@@ -7,9 +7,13 @@ local buttons = {}
 buttons.with_icon = function(args)
     local type = args.type or 'basic'
     local color = args.color or '#D8DEE9'
-    local icon = args.icon
-    local shape = args.shape
+    local icon = args.icon or 'help-circle'
+    local shape = args.shape or 'circle'
     local onclick = args.onclick or function () end
+
+    if icon:sub(1, 1) ~= '/' then
+        icon = os.getenv("HOME") .. '/.config/awesome/awesome-buttons/icons/' .. icon .. '.svg'
+    end
 
     local result = wibox.widget{
         {
@@ -38,6 +42,8 @@ buttons.with_icon = function(args)
         result:set_shape(gears.shape.circle)
     elseif shape == 'rounded_rect' then
         result:set_shape(function(cr, width, height) gears.shape.rounded_rect(cr, width, height, 4) end)
+    else
+        result:set_shape(gears.shape.rectangle)
     end
 
     local old_cursor, old_wibox
@@ -71,8 +77,6 @@ buttons.with_text = function(args)
     local onclick = args.onclick or function() end
     local color = args.color or '#D8DEE9'
     local text_size = args.text_size or 10
-
-
 
     local result = wibox.widget{
         {
@@ -129,7 +133,11 @@ buttons.with_icon_and_text = function(args)
     local onclick = args.onclick or function() end
     local color = args.color or '#D8DEE9'
     local text_size = args.text_size or 10
-    local shape = args.shape or 'rounded_rect'
+
+    if icon:sub(1, 1) ~= '/' then
+        icon = os.getenv("HOME") .. '/.config/awesome/awesome-buttons/icons/' .. icon .. '.svg'
+    end
+
 
     local result = wibox.widget{
         {
@@ -189,7 +197,7 @@ buttons.with_icon_and_text = function(args)
         result:connect_signal("button::press", function() onclick() end)
 
         return result
-
 end
+
 
 return buttons
