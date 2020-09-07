@@ -2,7 +2,14 @@
 
 Button widget library for Awesome Window Manager
 
-![screenshot](./screenshot.gif)
+<p align="center">
+ <img src="https://github.com/streetturtle/awesome-buttons/raw/master/screenshot.gif" alt="logo" style="max-width:100%;">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/streetturtle/awesome-buttons.svg">
+  <img src="https://img.shields.io/github/forks/streetturtle/awesome-buttons.svg">
+</p>
 
 # Customizations
 
@@ -27,6 +34,16 @@ Button widget library for Awesome Window Manager
 | `shape` | `circle` | Shape of the button, could be 'circle', 'rounded_rect' or 'rectangle' |
 | `onclick` | `function() end` | Function which is called when button is clicked |
 
+## Icon with text button
+
+| Name | Default | Description |
+|---|---|---|
+| `type` | `basic` | Button type, could be 'outline', 'flat' or 'basic' |
+| `icon` | `help-circle` | Icon name from feathericons, or path to the icon, read below for more details  |
+| `text` | `''` | Button text |
+| `text_size` | `10` | Size of the text |
+| `onclick` | `function() end` | Function which is called when button is clicked |
+
 Buttons come with preinstalled icons (taken from https://feathericons.com/). So you can either specify the name of the icon to use (to check available icons check the https://feathericons.com/ or under the icons folder):
 
 ```lua
@@ -38,16 +55,6 @@ or provide a path to the icon:
 ```lua
 awesomebuttons.with_icon{ icon = '/home/something/something.svg', color = '#f88' }
 ```
-
-## Icon with text button
-
-| Name | Default | Description |
-|---|---|---|
-| `type` | `basic` | Button type, could be 'outline', 'flat' or 'basic' |
-| `icon` | `help-circle` | Icon name from feathericons, or path to the icon, read below for more details  |
-| `text` | `''` | Button text |
-| `text_size` | `10` | Size of the text |
-| `onclick` | `function() end` | Function which is called when button is clicked |
 
 # Demo
 
