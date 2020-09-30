@@ -9,6 +9,8 @@ buttons.with_icon = function(args)
     local color = args.color or '#D8DEE9'
     local icon = args.icon or 'help-circle'
     local shape = args.shape or 'circle'
+    local icon_size = args.icon_size or 20
+    local icon_margin = args.icon_margin or 4
     local onclick = args.onclick or function () end
 
     if icon:sub(1, 1) ~= '/' then
@@ -20,11 +22,11 @@ buttons.with_icon = function(args)
             {
                 image = icon,
                 resize = true,
-                forced_height = 20,
-                forced_width = 20,
+                forced_height = icon_size,
+                forced_width = icon_size,
                 widget = wibox.widget.imagebox
             },
-            margins = 8,
+            margins = icon_margin,
             widget = wibox.container.margin
         },
         bg = '#00000000',
@@ -90,7 +92,6 @@ buttons.with_text = function(args)
         bg = '#00000000',
         shape = function(cr, width, height) gears.shape.rounded_rect(cr, width, height, 4) end,
         widget = wibox.container.background
-
     }
 
     if type == 'outline' then
@@ -159,7 +160,7 @@ buttons.with_icon_and_text = function(args)
                 top = 4, bottom = 4, right = 8,
                 widget = wibox.container.margin
             },
-            layout = wibox.layout.align.horizontal
+            layout = wibox.layout.fixed.horizontal
         },
         bg = '#00000000',
         shape = function(cr, width, height) gears.shape.rounded_rect(cr, width, height, 4) end,

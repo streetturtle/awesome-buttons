@@ -30,7 +30,9 @@ Button widget library for Awesome Window Manager
 |---|---|---|
 | `type` | `basic` | Button type, could be 'outline', 'flat' or 'basic' |
 | `color` | `#D8DEE9` | Button color |
-| `icon` | `help-circle` | Icon name from feathericons, or path to the icon, read below for more details  |
+| `icon` | `help-circle` | Icon name from feathericons, or path to the icon, read below for more details |
+| `icon_size` | `20` | Size of the icon |
+| `icon_margin` | `4` | Margins around the icon |
 | `shape` | `circle` | Shape of the button, could be 'circle', 'rounded_rect' or 'rectangle' |
 | `onclick` | `function() end` | Function which is called when button is clicked |
 
