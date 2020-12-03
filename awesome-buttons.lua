@@ -1,6 +1,5 @@
 local wibox = require("wibox")
 local gears = require("gears")
-local naughty = require("naughty")
 
 local buttons = {}
 
@@ -83,7 +82,8 @@ buttons.with_text = function(args)
     local result = wibox.widget{
         {
             {
-                markup = '<span size="' .. text_size .. '000" foreground="' .. ((type == 'flat') and '#00000000' or color) .. '">' .. text ..'</span>',
+                markup = '<span size="' .. text_size .. '000" foreground="'
+                    .. ((type == 'flat') and '#00000000' or color) .. '">' .. text ..'</span>',
                 widget = wibox.widget.textbox
             },
             top = 4, bottom = 4, left = 8, right = 8,
@@ -154,7 +154,8 @@ buttons.with_icon_and_text = function(args)
             },
             {
                 {
-                    markup = '<span size="' .. text_size .. '000" foreground="' .. ((type == 'flat') and '#00000000' or color) .. '">' .. text ..'</span>',
+                    markup = '<span size="' .. text_size .. '000" foreground="'
+                        .. ((type == 'flat') and '#00000000' or color) .. '">' .. text ..'</span>',
                     widget = wibox.widget.textbox
                 },
                 top = 4, bottom = 4, right = 8,
