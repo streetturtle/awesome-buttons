@@ -9,6 +9,7 @@ Button widget library for Awesome Window Manager
 <p align="center">
   <img src="https://img.shields.io/github/stars/streetturtle/awesome-buttons.svg">
   <img src="https://img.shields.io/github/forks/streetturtle/awesome-buttons.svg">
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/streetturtle/awesome-buttons/luacheck">
 </p>
 
 # Customizations
