@@ -52,9 +52,11 @@ buttons.with_icon = function(args)
         if type ~= 'flat' then
             c:set_bg(color)
         end
-        local wb = mouse.current_wibox
-        old_cursor, old_wibox = wb.cursor, wb
-        wb.cursor = "hand1"
+        pcall(function()
+                local wb = mouse.current_wibox
+                old_cursor, old_wibox = wb.cursor, wb
+                wb.cursor = "hand1"
+        end)
     end)
     result:connect_signal("mouse::leave", function(c)
         if type ~= 'flat' then
@@ -182,9 +184,11 @@ buttons.with_icon_and_text = function(args)
             if type ~= 'flat' then
                 c:set_bg('#00000044')
             end
-            local wb = mouse.current_wibox
-            old_cursor, old_wibox = wb.cursor, wb
-            wb.cursor = "hand1"
+            pcall(function ()
+                local wb = mouse.current_wibox
+                old_cursor, old_wibox = wb.cursor, wb
+                wb.cursor = "hand1"
+            end)
         end)
         result:connect_signal("mouse::leave", function(c)
             if type ~= 'flat' then
